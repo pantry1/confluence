@@ -1,0 +1,32 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUMvakNDQWVhZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJek1EY3dOekUxTVRNd05Wb1hEVE16TURjd05ERTFNVE13TlZvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTEp1CmtsSjdzSDF5bVZHOHdxdFAxSnJBaWEzanJvb05tdEJOZzk1amhDMCsrdmVndjlxMjg3YzBCNXl2cnROUVFSSXgKeEVQeXVSZUhxNTVKTStFVzV0Ync0dUlWS3lJVTJXc1hSWVhibmthRFQ0ZVZDNmhWdkE3a1BFejVDUlRhSFFzaApKVzBWQXVWRFJOb0VJdWl6RzNYbnNmc29FUHhPT1hWWVh0cTNmZXpIdHdnaEpjVW01TzlqcnFOUitRR0ZjV0tlClpHa2tmWmM5aHNHNmUwdldlaGdOYXlZTTBSNGFtd2phUURxQm52QWhmU0E3VWo1UUwrNHR5eUp5Zjc5dUZITXQKT3cvNUx5RnRBYWd2NGxyTVg1OHkvZUVGOWROMTVKMk5BQWRjY05FemRsZ2ZOV0N0Y0l4UGFsdERkZUJ3V1BCSwpLdG5aNXhqaStjV01pcWdaWXMwQ0F3RUFBYU5aTUZjd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZCY0tSdW9kamlUNzVOUnVqN1oxMiszd25mV09NQlVHQTFVZEVRUU8KTUF5Q0NtdDFZbVZ5Ym1WMFpYTXdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBSnp4eWR1QUYvRjkva1A5aUlGbQpiS0JsdTh5Mm00VS9KOGFQL01EWFRhQlNzaHp5MjZWVDF0NmhwaGI2aHV4M213NGgwVFZqSjRsT1pYYitDQlNiCm4rcmwxMWlwOUJub012TmNLbWNUL3NxVHlDWktFcjNpeGthSXdSOHBLOTRNaWZCNDJUamNNekpTMGdCZXhLaTcKOXFpQlBEdHBCZnFkaTRYd2EzYXNxOEpLZnNXRjFwRlNLMlkrOEtnaGMzbkd6T1AyQnBvaHlBUXdIVWpaSTdDaApEQWJETmRhdlJWcHI4R3NvYkdoK25lYjNxNThlV3FEQ3N5VCtXalRtTkk0bEhtQmRLVDV3T010MVBZcS8veFU2Cm94eGZnSE95Z0NBZkw2S091UmtsNG94RFNKci8yb3p2blRLWkppRnNISWZ0UUJqNFNCVy9FNzhSbm9zR0d2RnUKZm5zPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    server: https://FE8214234B539E4DBE27930A9839B468.gr7.ap-south-1.eks.amazonaws.com
+  name: arn:aws:eks:ap-south-1:998516096174:cluster/confluent-cluster
+contexts:
+- context:
+    cluster: arn:aws:eks:ap-south-1:998516096174:cluster/confluent-cluster
+    user: arn:aws:eks:ap-south-1:998516096174:cluster/confluent-cluster
+  name: arn:aws:eks:ap-south-1:998516096174:cluster/confluent-cluster
+current-context: arn:aws:eks:ap-south-1:998516096174:cluster/confluent-cluster
+kind: Config
+preferences: {}
+users:
+- name: arn:aws:eks:ap-south-1:998516096174:cluster/confluent-cluster
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1beta1
+      args:
+      - --region
+      - ap-south-1
+      - eks
+      - get-token
+      - --cluster-name
+      - confluent-cluster
+      - --output
+      - json
+      command: aws
+      env:
+      - name: AWS_PROFILE
+        value: svc-terraform
